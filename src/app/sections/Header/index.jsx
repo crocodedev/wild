@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
 const Header = () => {
   const [active, setActive] = useState(false);
   const [headerBg, setHeaderBg] = useState(false);
-  const body = document.querySelector("body");
+  const body = document?.querySelector("body");
   const header = useRef();
 
   const toggleMenu = () => {
@@ -38,8 +38,8 @@ const Header = () => {
 
   useEffect(() => {
     if (body && header) {
-      const hero = document.getElementById("hero");
-      document.addEventListener("scroll", () => scrollHandler(hero));
+      const hero = document?.getElementById("hero");
+      document?.addEventListener("scroll", () => scrollHandler(hero));
 
       return () =>
         document.removeEventListener("scroll", () => scrollHandler(hero));
