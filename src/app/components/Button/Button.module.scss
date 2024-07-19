@@ -1,0 +1,67 @@
+@import "/src/app/styles/mixins.scss";
+
+.button {
+  text-transform: uppercase;
+  background-color: transparent;
+  border-radius: 100px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  &--white {
+    border: 3px solid white;
+    color: white;
+
+    &:hover {
+      background-color: white;
+      color: #0030aa;
+    }
+  }
+
+  &:not(.button--white) {
+    color: #0030aa;
+    border: 3px solid #0030aa;
+
+    &:hover {
+      background-color: #0030aa;
+      color: white;
+    }
+  }
+
+  &:not(&--xl) {
+    @include media-breakpoint-down(md) {
+      font-size: 14px;
+      line-height: 21px;
+      padding: 10px 20px;
+    }
+
+    @include media-breakpoint-up(md) {
+      font-size: 18px;
+      line-height: 27px;
+      padding: 15px 30px;
+    }
+  }
+
+  &:is(&--xl) {
+    @include media-breakpoint-down(md) {
+      font-size: 14px;
+      line-height: 21px;
+      padding: 10px 20px;
+      width: 180px;
+    }
+
+    @include media-breakpoint-between(md, xl) {
+      font-size: 20px;
+      line-height: 40px;
+      padding: 10px 20px;
+
+      width: 320px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      font-size: 40px;
+      line-height: 60px;
+      width: 520px;
+    }
+  }
+}

@@ -1,0 +1,231 @@
+@import "/src/app/styles/mixins.scss";
+
+.experience {
+  overflow: hidden;
+  @include media-breakpoint-down(lg) {
+    padding: 25px 0;
+  }
+
+  @include media-breakpoint-between(lg, l) {
+    padding: 50px 0;
+  }
+
+  @include media-breakpoint-up(l) {
+    padding: 100px 0;
+  }
+  &:not(.experience--v3) {
+    background: linear-gradient(
+      194.29deg,
+      #1b4af7 9.33%,
+      rgba(0, 163, 255, 0.01) 74.67%
+    );
+  }
+
+  &:is(.experience--v3) {
+    background: linear-gradient(
+      5.28deg,
+      #1b4af7 15.06%,
+      rgba(0, 163, 255, 0.01) 83.77%
+    );
+  }
+
+  &__image {
+    width: 100%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  &__image-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__image-left,
+  &__image-right {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  &__image-left {
+    align-items: flex-end;
+
+    @include media-breakpoint-down(xs) {
+      left: 40px;
+    }
+
+    @include media-breakpoint-between(xs, sm) {
+      left: 70px;
+    }
+
+    @include media-breakpoint-between(sm, md) {
+      left: 100px;
+    }
+
+    @include media-breakpoint-between(md, l) {
+      left: 150px;
+    }
+
+    @include media-breakpoint-between(l, xl) {
+      left: 130px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      left: 140px;
+    }
+    div:nth-of-type(1) {
+      @include media-breakpoint-down(sm) {
+        width: 76px;
+        height: 121px;
+      }
+      @include media-breakpoint-between(sm, lg) {
+        width: 126px;
+        height: 181px;
+      }
+
+      @include media-breakpoint-between(lg, l) {
+        width: 180px;
+        height: 300px;
+      }
+      @include media-breakpoint-between(l, xl) {
+        width: 280px;
+        height: 500px;
+      }
+      @include media-breakpoint-up(xl) {
+        width: 380px;
+        height: 600px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    div:nth-of-type(2) {
+      @include media-breakpoint-down(sm) {
+        width: 55px;
+        height: 53px;
+      }
+
+      @include media-breakpoint-between(sm, lg) {
+        width: 105px;
+        height: 105px;
+      }
+
+      @include media-breakpoint-between(lg, l) {
+        width: 140px;
+        height: 140px;
+      }
+
+      @include media-breakpoint-between(l, xl) {
+        width: 250px;
+        height: 240px;
+      }
+      @include media-breakpoint-up(xl) {
+        width: 274px;
+        height: 263px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__image-right {
+    @include media-breakpoint-down(xs) {
+      right: 40px;
+    }
+
+    @include media-breakpoint-between(xs, sm) {
+      right: 70px;
+    }
+
+    @include media-breakpoint-between(sm, md) {
+      right: 100px;
+    }
+
+    @include media-breakpoint-between(md, l) {
+      right: 150px;
+    }
+    @include media-breakpoint-between(l, xl) {
+      right: 130px;
+    }
+
+    @include media-breakpoint-up(xl) {
+      right: 140px;
+    }
+
+    div:nth-of-type(1) {
+      @include media-breakpoint-down(sm) {
+        width: 73px;
+        height: 55px;
+      }
+
+      @include media-breakpoint-between(sm, lg) {
+        width: 140px;
+        height: 85px;
+      }
+
+      @include media-breakpoint-between(lg, l) {
+        width: 170px;
+        height: 90px;
+      }
+
+      @include media-breakpoint-between(l, xl) {
+        width: 280px;
+        height: 170px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        width: 380px;
+        height: 276px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    div:nth-of-type(2) {
+      @include media-breakpoint-down(sm) {
+        width: 76px;
+        height: 81px;
+      }
+
+      @include media-breakpoint-between(sm, lg) {
+        width: 150px;
+        height: 180px;
+      }
+
+      @include media-breakpoint-between(lg, l) {
+        width: 170px;
+        height: 200px;
+      }
+      @include media-breakpoint-between(l, xl) {
+        width: 280px;
+        height: 340px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        width: 380px;
+        height: 406px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

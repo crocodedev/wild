@@ -1,0 +1,29 @@
+@import "/src/app/styles/mixins.scss";
+
+.title {
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+
+  &--white {
+    color: #fff;
+  }
+
+  @include media-breakpoint-down(md) {
+    font-size: 34px;
+    line-height: 40.8px;
+    margin-bottom: 20px;
+  }
+
+  @include media-breakpoint-between(md, xl) {
+    font-size: 74px;
+    line-height: 88px;
+    margin-bottom: 35px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 96px;
+    line-height: 115.2px;
+    margin-bottom: 45px;
+  }
+}

@@ -1,0 +1,64 @@
+@import "/src/app/styles/mixins.scss";
+
+.header-nav {
+  display: flex;
+  align-items: center;
+
+  @include media-breakpoint-down(l) {
+    &:not(.header-nav--active) {
+      left: -100%;
+    }
+
+    &:is(.header-nav--active) {
+      left: 0;
+    }
+
+    position: fixed;
+    z-index: 2;
+    flex-direction: column;
+    background-color: #fff;
+    top: 0;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.288);
+    padding: 40px;
+    height: 100vh;
+    gap: 20px;
+    transition: 0.3s ease-in-out;
+  }
+
+  @include media-breakpoint-between(l, xl) {
+    gap: 30px;
+  }
+
+  @include media-breakpoint-between(xl, xxl) {
+    gap: 50px;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    gap: 70px;
+  }
+
+  a {
+    color: black;
+    font-weight: 500;
+    transition: 0.3s ease;
+
+    @include media-breakpoint-down(l) {
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    @include media-breakpoint-up(l) {
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
+  a:hover {
+    color: #0030aa;
+  }
+
+  &__btn {
+    @include media-breakpoint-up(l) {
+      display: none;
+    }
+  }
+}

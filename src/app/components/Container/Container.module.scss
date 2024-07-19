@@ -1,0 +1,37 @@
+@import "/src/app/styles/mixins.scss";
+
+.container {
+  position: relative;
+  max-width: 100%;
+  z-index: 1;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  @include media-breakpoint-between(sm, md) {
+    max-width: $breakpoints-sm;
+  }
+
+  @include media-breakpoint-between(md, lg) {
+    max-width: $breakpoints-md;
+  }
+
+  @include media-breakpoint-between(lg, l) {
+    max-width: $breakpoints-lg;
+  }
+
+  @include media-breakpoint-between(l, xl) {
+    max-width: $breakpoints-l;
+  }
+
+  @include media-breakpoint-between(xl, xxl) {
+    max-width: $breakpoints-xl;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    max-width: $breakpoints-xxl;
+  }
+}

@@ -1,0 +1,141 @@
+@import "/src/app/styles/mixins.scss";
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  width: 100%;
+  transition: 0.2s ease-in-out;
+  background-color: transparent;
+
+  &--white {
+    background-color: #fff;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include media-breakpoint-down(l) {
+      padding: 15px 20px;
+    }
+
+    @include media-breakpoint-up(l) {
+      padding: 18.5px 20px;
+    }
+
+    @include media-breakpoint-between(sm, md) {
+      max-width: $breakpoints-sm;
+    }
+
+    @include media-breakpoint-between(md, lg) {
+      max-width: $breakpoints-md;
+    }
+
+    @include media-breakpoint-between(lg, l) {
+      max-width: $breakpoints-lg;
+    }
+
+    @include media-breakpoint-between(l, xl) {
+      max-width: $breakpoints-l;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+      max-width: $breakpoints-xl;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      max-width: $breakpoints-xxl;
+    }
+  }
+
+  &__logo {
+    @include media-breakpoint-down(l) {
+      font-size: 40px;
+      line-height: 60px;
+    }
+
+    @include media-breakpoint-up(l) {
+      font-size: 64px;
+      line-height: 96px;
+    }
+  }
+
+  &__logo-icon {
+    @include media-breakpoint-down(l) {
+      width: 90px;
+      height: 31px;
+    }
+    @include media-breakpoint-up(l) {
+      width: 124px;
+      height: 57px;
+    }
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__menu-btn {
+    @include media-breakpoint-up(l) {
+      display: none;
+    }
+
+    @include media-breakpoint-down(l) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 2px;
+      background-color: black;
+      position: relative;
+      transition: 0.3s ease;
+
+      &::after,
+      &::before {
+        transition: 0.3s ease;
+        width: 100%;
+        height: 2px;
+        background-color: black;
+        content: "";
+        position: absolute;
+      }
+
+      &::after {
+        top: 5px;
+      }
+
+      &::before {
+        top: -5px;
+      }
+    }
+  }
+
+  &__menu-btn--active {
+    @include media-breakpoint-down(l) {
+      transform: rotate(45deg);
+
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        transform: rotate(-90deg);
+        top: 0;
+      }
+    }
+  }
+
+  &__buy {
+    @include media-breakpoint-down(l) {
+      display: none;
+    }
+  }
+}

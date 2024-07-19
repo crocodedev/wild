@@ -1,0 +1,42 @@
+@import "/src/app/styles/mixins.scss";
+
+.demos {
+  @include media-breakpoint-down(lg) {
+    padding: 25px 0;
+  }
+
+  @include media-breakpoint-between(lg, l) {
+    padding: 50px 0;
+  }
+
+  @include media-breakpoint-up(l) {
+    padding: 100px 0;
+  }
+
+  &__items {
+    display: grid;
+
+    @include media-breakpoint-down(lg) {
+      gap: 40px;
+    }
+
+    @include media-breakpoint-up(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-breakpoint-between(lg, l) {
+      row-gap: 40px;
+      column-gap: 20px;
+    }
+
+    @include media-breakpoint-between(l, xxl) {
+      column-gap: 30px;
+      row-gap: 60px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+      column-gap: 40px;
+      row-gap: 80px;
+    }
+  }
+}
