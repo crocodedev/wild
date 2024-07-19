@@ -42,7 +42,7 @@ const Header = () => {
       document?.addEventListener("scroll", () => scrollHandler(hero));
 
       return () =>
-        document.removeEventListener("scroll", () => scrollHandler(hero));
+        document?.removeEventListener("scroll", () => scrollHandler(hero));
     }
   }, [body]);
 
