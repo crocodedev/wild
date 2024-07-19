@@ -9,7 +9,6 @@ import { useEffect, useRef, useState } from "react";
 const Header = () => {
   const [active, setActive] = useState(false);
   const [headerBg, setHeaderBg] = useState(false);
-  const body = document?.querySelector("body");
   const header = useRef();
 
   const toggleMenu = () => {
@@ -17,10 +16,14 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (active) {
-      body.style.overflow = "hidden";
-    } else {
-      body.style.overflow = "auto";
+    if (typeof document !== "undefined") {
+      const body = document.querySelector("body");
+
+      if (active) {
+        body.style.overflow = "hidden";
+      } else {
+        body.style.overflow = "auto";
+      }
     }
   }, [active]);
 
@@ -37,15 +40,18 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (body && header && document) {
-      console.log(document);
-      const hero = document?.getElementById("hero");
-      document?.addEventListener("scroll", () => scrollHandler(hero));
+    if (typeof document !== "undefined") {
+      const hero = document.getElementById("hero");
 
-      return () =>
-        document?.removeEventListener("scroll", () => scrollHandler(hero));
+      const handleScroll = () => scrollHandler(hero);
+
+      document.addEventListener("scroll", handleScroll);
+
+      return () => {
+        document.removeEventListener("scroll", handleScroll);
+      };
     }
-  }, [body]);
+  }, []);
 
   return (
     <motion.header
