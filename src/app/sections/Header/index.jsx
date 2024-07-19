@@ -37,7 +37,8 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (body && header) {
+    if (body && header && document) {
+      console.log(document);
       const hero = document?.getElementById("hero");
       document?.addEventListener("scroll", () => scrollHandler(hero));
 
