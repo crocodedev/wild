@@ -4,11 +4,11 @@ import { useEffect, useRef } from "react";
 import style from "./DemoItem.module.scss";
 import Image from "next/image";
 
-const DemoItem = ({ name, image }) => {
+const DemoItem = ({ name, image, url }) => {
   const imageRef = useRef();
 
   useEffect(() => {
-    const img = imageRef.current.children[0];
+    const img = imageRef.current.children[1];
 
     const handleMouseOver = () => {
       img.style.transition = `all ${
@@ -40,6 +40,7 @@ const DemoItem = ({ name, image }) => {
   return (
     <div className={style["demo-item"]}>
       <div className={style["demo-item__image"]} ref={imageRef}>
+        <a href={url} className={style["demo-item__image-link"]}></a>
         <Image
           src={image}
           width={800}
